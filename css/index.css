@@ -1,0 +1,213 @@
+/* ================================================
+   LAPIS LUXE — Design System
+   Core variables, typography, reset, utilities
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+/* --- Design Tokens --- */
+:root {
+  /* Color Palette — Warm Pastry Tones */
+  --cream:          #FFF8F0;
+  --cream-dark:     #F5EDE3;
+  --coral:          #FF6B6B;
+  --coral-light:    #FF8A8A;
+  --coral-deep:     #E85555;
+  --plum:           #8B5CF6;
+  --plum-light:     #A78BFA;
+  --plum-deep:      #7C3AED;
+  --gold:           #F59E0B;
+  --gold-light:     #FBBF24;
+  --dark-choco:     #2D1B14;
+  --milk-choco:     #7C5A4B;
+  --light-choco:    #A8897C;
+  --frosting:       #FECDD3;
+  --frosting-deep:  #FDA4AF;
+  --mint:           #6EE7B7;
+  --mint-deep:      #34D399;
+
+  /* Semantic Colors */
+  --bg-primary:     var(--cream);
+  --bg-secondary:   var(--cream-dark);
+  --text-primary:   var(--dark-choco);
+  --text-secondary: var(--milk-choco);
+  --text-muted:     var(--light-choco);
+  --accent-primary: var(--coral);
+  --accent-secondary: var(--plum);
+
+  /* Typography */
+  --font-display:   'Playfair Display', Georgia, serif;
+  --font-body:      'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Font Sizes — Fluid Scale */
+  --fs-hero:        clamp(3rem, 7vw, 6rem);
+  --fs-h1:          clamp(2.25rem, 5vw, 4rem);
+  --fs-h2:          clamp(1.75rem, 4vw, 3rem);
+  --fs-h3:          clamp(1.25rem, 2.5vw, 1.75rem);
+  --fs-body:        clamp(0.95rem, 1.2vw, 1.125rem);
+  --fs-small:       clamp(0.8rem, 1vw, 0.9rem);
+  --fs-xs:          0.75rem;
+
+  /* Spacing */
+  --space-xs:       0.5rem;
+  --space-sm:       0.75rem;
+  --space-md:       1rem;
+  --space-lg:       1.5rem;
+  --space-xl:       2rem;
+  --space-2xl:      3rem;
+  --space-3xl:      4rem;
+  --space-4xl:      6rem;
+  --space-5xl:      8rem;
+
+  /* Layout */
+  --max-width:      1280px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 28px;
+  --border-radius-pill: 100px;
+
+  /* Shadows */
+  --shadow-soft:    0 4px 24px rgba(45, 27, 20, 0.06);
+  --shadow-medium:  0 8px 32px rgba(45, 27, 20, 0.10);
+  --shadow-strong:  0 16px 48px rgba(45, 27, 20, 0.14);
+  --shadow-glow-coral: 0 0 40px rgba(255, 107, 107, 0.25);
+  --shadow-glow-plum:  0 0 40px rgba(139, 92, 246, 0.20);
+
+  /* Transitions */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring:    cubic-bezier(0.22, 1.2, 0.36, 1);
+  --transition-fast:    0.2s var(--ease-out-expo);
+  --transition-normal:  0.4s var(--ease-out-expo);
+  --transition-slow:    0.6s var(--ease-out-expo);
+  --transition-bounce:  0.5s var(--ease-out-back);
+
+  /* Z-index scale */
+  --z-base: 1;
+  --z-above: 10;
+  --z-nav: 100;
+  --z-modal: 1000;
+}
+
+/* --- CSS Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p {
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* --- Layout Utility --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.section {
+  padding: var(--space-5xl) 0;
+  position: relative;
+}
+
+/* --- Selection Style --- */
+::selection {
+  background: var(--frosting);
+  color: var(--dark-choco);
+}
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-choco);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--milk-choco);
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

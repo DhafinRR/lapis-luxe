@@ -1,0 +1,276 @@
+/* ================================================
+   LAPIS LUXE — Menu Section (Bento Grid)
+   Asymmetric grid layout with 3D hover cards
+   ================================================ */
+
+.menu-section {
+  padding: var(--space-5xl) 0;
+  position: relative;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+/* Subtle wavy divider at top */
+.menu-section::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--cream);
+  clip-path: ellipse(55% 100% at 50% 0%);
+  z-index: 2;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  position: relative;
+}
+
+.menu-header .section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--coral);
+  margin-bottom: var(--space-md);
+}
+
+.menu-header .section-tag .tag-line {
+  width: 24px;
+  height: 2px;
+  background: var(--coral);
+  border-radius: 100px;
+}
+
+.menu-header h2 {
+  margin-bottom: var(--space-md);
+}
+
+.menu-header p {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: var(--fs-body);
+}
+
+/* --- Bento Grid --- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: var(--space-lg);
+  perspective: 1200px;
+}
+
+/* Bento card sizing:
+   Card 1 (Tiramisu): Large — spans 7 cols
+   Card 2 (Cheesecake): Medium — spans 5 cols
+   Card 3 (Fruit Tart): Medium — spans 5 cols
+   Card 4 (Lapis Legit): Large — spans 7 cols
+   Card 5 (Brownies): Medium — spans 6 cols
+   Card 6 (Mochi): Medium — spans 6 cols
+*/
+
+.bento-card:nth-child(1) { grid-column: span 7; }
+.bento-card:nth-child(2) { grid-column: span 5; }
+.bento-card:nth-child(3) { grid-column: span 5; }
+.bento-card:nth-child(4) { grid-column: span 7; }
+.bento-card:nth-child(5) { grid-column: span 6; }
+.bento-card:nth-child(6) { grid-column: span 6; }
+
+/* --- Bento Card --- */
+.bento-card {
+  position: relative;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--shadow-soft);
+  transform-style: preserve-3d;
+  transition: transform 0.5s var(--ease-out-expo),
+              box-shadow 0.5s var(--ease-out-expo);
+  cursor: pointer;
+}
+
+.bento-card:hover {
+  transform: perspective(800px) rotateY(-3deg) rotateX(2deg) translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-strong);
+}
+
+/* Card image area */
+.bento-card-img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--cream);
+}
+
+.bento-card:nth-child(1) .bento-card-img,
+.bento-card:nth-child(4) .bento-card-img {
+  aspect-ratio: 16 / 9;
+}
+
+.bento-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.bento-card:hover .bento-card-img img {
+  transform: scale(1.06);
+}
+
+/* Image overlay gradient */
+.bento-card-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.05), transparent);
+  pointer-events: none;
+}
+
+/* --- Card Badge --- */
+.card-badge {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  padding: 5px 14px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.card-badge.best-seller {
+  background: var(--gold);
+  color: white;
+  background-size: 400% 100%;
+  background-image: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    var(--gold-light) 25%,
+    var(--gold) 50%,
+    var(--gold-light) 75%,
+    var(--gold) 100%
+  );
+  animation: shimmer 3s linear infinite;
+}
+
+.card-badge.new {
+  background: var(--plum);
+  color: white;
+}
+
+.card-badge.popular {
+  background: var(--coral);
+  color: white;
+}
+
+/* --- Card Content --- */
+.bento-card-content {
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.bento-card-content h3 {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--space-xs);
+  transition: color var(--transition-fast);
+}
+
+.bento-card:hover .bento-card-content h3 {
+  color: var(--coral);
+}
+
+.bento-card-content .card-desc {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+}
+
+.bento-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-price {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--coral);
+}
+
+.card-price .price-from {
+  font-size: var(--fs-xs);
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.card-order-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--border-radius-pill);
+  background: var(--dark-choco);
+  color: white;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  transition: all var(--transition-bounce);
+}
+
+.card-order-btn:hover {
+  background: var(--coral);
+  transform: scale(1.05);
+}
+
+.card-order-btn .arrow {
+  transition: transform var(--transition-fast);
+}
+
+.card-order-btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 968px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-card:nth-child(1),
+  .bento-card:nth-child(2),
+  .bento-card:nth-child(3),
+  .bento-card:nth-child(4),
+  .bento-card:nth-child(5),
+  .bento-card:nth-child(6) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .bento-card-img {
+    aspect-ratio: 16 / 10 !important;
+  }
+}

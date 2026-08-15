@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lapis Luxe — Premium Artisan Desserts | Every Layer Tells a Story</title>
+  <meta name="description" content="Lapis Luxe menyajikan dessert artisan premium — tiramisu, cheesecake, fruit tart, lapis legit, dan lainnya. Dibuat dengan bahan pilihan dan cinta di setiap lapisannya.">
+  <meta name="keywords" content="dessert, kue, cake, pastry, tiramisu, cheesecake, lapis legit, artisan, premium, Jakarta">
+  <meta property="og:title" content="Lapis Luxe — Premium Artisan Desserts">
+  <meta property="og:description" content="Every Layer Tells a Story. Premium desserts crafted with love.">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/decorations.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/showcase.css">
+  <link rel="stylesheet" href="css/scrolly.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/testimonial.css">
+  <link rel="stylesheet" href="css/order.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>">
+</head>
+<body>
+
+  <!-- ============================
+       NAVIGATION
+       ============================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">🍰</span>
+        <span>Lapis<span class="logo-accent">Luxe</span></span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#order">Order</a>
+        <a href="#order" class="nav-cta">Pesan Sekarang</a>
+      </div>
+
+      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================
+       HERO SECTION
+       ============================ -->
+  <section class="hero" id="hero">
+    <!-- Animated blobs -->
+    <div class="blob coral" style="width:400px;height:400px;top:-5%;right:-5%;animation-delay:-3s;animation-duration:18s;"></div>
+    <div class="blob plum" style="width:300px;height:300px;bottom:10%;left:-8%;animation-delay:-7s;animation-duration:22s;"></div>
+    <div class="blob gold" style="width:250px;height:250px;top:40%;right:25%;animation-delay:-5s;animation-duration:16s;opacity:0.04;"></div>
+    <div class="blob frosting" style="width:350px;height:350px;top:15%;left:30%;animation-delay:-10s;animation-duration:20s;opacity:0.05;"></div>
+
+    <!-- Floating 3D dessert objects -->
+    <span class="floating-object size-lg rotate-3d delay-1" style="top:12%;left:8%;" aria-hidden="true">🍩</span>
+    <span class="floating-object size-md bounce delay-2" style="top:25%;right:12%;" aria-hidden="true">🧁</span>
+    <span class="floating-object size-sm zigzag delay-3" style="bottom:20%;left:15%;" aria-hidden="true">🍪</span>
+    <span class="floating-object size-md rotate-3d delay-4" style="bottom:30%;right:8%;" aria-hidden="true">🍫</span>
+    <span class="floating-object size-sm swing delay-5" style="top:60%;left:5%;" aria-hidden="true">🍓</span>
+    <span class="floating-object size-lg spin-slow delay-1" style="top:8%;right:30%;" aria-hidden="true">🎂</span>
+    <span class="floating-object size-sm bounce delay-3" style="bottom:15%;right:25%;" aria-hidden="true">🫐</span>
+
+    <!-- Geometric shapes -->
+    <div class="geo-shape geo-ring" style="top:18%;right:18%;opacity:0.06;animation-delay:-4s;"></div>
+    <div class="geo-shape geo-ring ring-plum" style="bottom:25%;left:8%;width:60px;height:60px;opacity:0.05;animation-delay:-8s;"></div>
+    <div class="geo-shape geo-ring ring-gold" style="top:55%;right:5%;width:40px;height:40px;opacity:0.04;animation-delay:-12s;"></div>
+
+    <!-- Rising particles -->
+    <div class="particles-container">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- Decorative orbs -->
+    <div class="hero-decor hero-decor-1"></div>
+    <div class="hero-decor hero-decor-2"></div>
+    <div class="hero-decor hero-decor-3"></div>
+
+    <div class="container">
+      <!-- Hero Text -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Handcrafted with Love ✨
+        </div>
+
+        <h1 class="hero-title">
+          <span class="line"><span class="word">Every</span></span>
+          <span class="line"><span class="word"><span class="highlight">Layer</span> Tells</span></span>
+          <span class="line"><span class="word">a Story</span></span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Dessert artisan premium yang dibuat dari bahan pilihan terbaik. 
+          Setiap gigitan adalah pengalaman yang tak terlupakan — crafted with passion, served with love.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#order" class="btn-primary" id="hero-cta-order">
+            Pesan Sekarang
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#menu" class="btn-secondary" id="hero-cta-menu">
+            Lihat Menu 🍰
+          </a>
+        </div>
+
+        <div class="hero-social-proof">
+          <div class="avatar-stack">
+            <div class="avatar">👩</div>
+            <div class="avatar">👨</div>
+            <div class="avatar">👧</div>
+            <div class="avatar">🧑</div>
+          </div>
+          <div class="social-proof-text">
+            <div class="social-proof-stars">★★★★★</div>
+            <strong>500+</strong> pelanggan puas bulan ini
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual (3D Explosion Stage) -->
+      <div class="hero-visual" id="hero-visual-stage">
+        <!-- Glowing Halo Bloom -->
+        <div class="hero-glow-halo" id="hero-glow-halo"></div>
+
+        <!-- Main 3D Composition Board -->
+        <img src="assets/images/hero-bg.jpg" alt="Koleksi dessert premium Lapis Luxe" class="hero-img-main" id="hero-img-main">
+
+        <!-- Satellite Floating Dessert Cards -->
+        <div class="hero-float hero-float-1" id="hero-float-1">
+          <img src="assets/images/cheesecake.jpg" alt="Cheesecake strawberry">
+        </div>
+        <div class="hero-float hero-float-2" id="hero-float-2">
+          <img src="assets/images/brownies.jpg" alt="Chocolate brownies">
+        </div>
+        <div class="hero-float hero-float-3" id="hero-float-3">
+          <img src="assets/images/mochi.jpg" alt="Mochi cake">
+        </div>
+
+        <!-- Luxury Exploding 3D Particles -->
+        <span class="hero-particle hp-1" id="hp-1">🍓</span>
+        <span class="hero-particle hp-2" id="hp-2">🍫</span>
+        <span class="hero-particle hp-3" id="hp-3">🫐</span>
+        <span class="hero-particle hp-4" id="hp-4">✨</span>
+        <span class="hero-particle hp-5" id="hp-5">🌸</span>
+        <span class="hero-particle hp-6" id="hp-6">🧁</span>
+      </div>
+    </div>
+
+    <!-- Wave divider bottom -->
+    <div class="wave-divider bottom">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,100 720,0 1080,60 C1260,90 1380,50 1440,40 L1440,100 L0,100 Z" fill="var(--cream)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================
+       SCROLLYTELLING 3D EXPLODED LAYER EXPERIENCE
+       Scroll-driven 3D Deconstruction of Desserts
+       ============================ -->
+  <section class="scrolly-journey" id="showcase">
+    <div class="scrolly-sticky-frame">
+      <!-- Ambient Dynamic Background -->
+      <div class="scrolly-bg-ambient" id="scrolly-bg-ambient"></div>
+
+      <!-- Top Header & Live Phase Title -->
+      <div class="scrolly-header">
+        <div class="scrolly-badge">
+          <span class="pulse-dot"></span>
+          <span>Scroll-Driven 3D Layer Anatomy ✨</span>
+        </div>
+        <h2 class="scrolly-title" id="scrolly-main-title">Anatomi Kemewahan Rasa</h2>
+        <p class="scrolly-subtitle" id="scrolly-sub-title">Scroll ke bawah untuk membelah lapisan kue dalam 3D secara detail</p>
+      </div>
+
+      <!-- Phase Selector Tabs (Clickable & auto-updating on scroll) -->
+      <div class="scrolly-phase-tabs" id="scrolly-phase-tabs">
+        <button class="phase-tab active" data-phase="0">🥞 18 Layer Lapis Legit</button>
+        <button class="phase-tab" data-phase="1">☕ Deconstructed Tiramisu</button>
+        <button class="phase-tab" data-phase="2">🍡 Sliced Molten Mochi</button>
+      </div>
+
+      <!-- Center 3D Stage -->
+      <div class="scrolly-stage">
+        <!-- Stage Ambient Pedestal Shadow -->
+        <div class="stage-pedestal-shadow"></div>
+
+        <!-- ==============================================
+             SCENE 1: LAPIS LEGIT ORIGINAL 18-LAYER SLICE 3D
+             ============================================== -->
+        <div class="scene-3d-view active-scene" id="scene-lapis" data-scene="0">
+          <!-- Floating Spices & Ingredients around Lapis -->
+          <span class="floating-stage-item float-pos-1">✨</span>
+          <span class="floating-stage-item float-pos-2">🥢</span>
+          <span class="floating-stage-item float-pos-3">🍂</span>
+          <span class="floating-stage-item float-pos-4">🧈</span>
+          <span class="floating-stage-item float-pos-5">🌿</span>
+
+          <div class="cake-stack-3d" id="cake-lapis-3d">
+            <!-- Solid Base View (seamless original image at rest) -->
+            <div class="cake-solid-base" id="base-lapis">
+              <img src="assets/images/lapis-legit.jpg" alt="Lapis Legit Spekkoek Original 3D">
+            </div>
+
+            <!-- Dynamic 3D Slices (separate on scroll) -->
+            <div class="slice-layers-wrapper" id="slices-lapis">
+              <div class="cake-slice-layer slice-lapis-1" id="slice-lapis-1"></div>
+              <div class="cake-slice-layer slice-lapis-2" id="slice-lapis-2"></div>
+              <div class="cake-slice-layer slice-lapis-3" id="slice-lapis-3"></div>
+              <div class="cake-slice-layer slice-lapis-4" id="slice-lapis-4"></div>
+            </div>
+
+            <!-- Exploding Callout Annotations -->
+            <div class="callout-annotations">
+              <div class="layer-callout callout-pos-top-left" id="callout-lapis-1">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Lapisan 01</span>
+                  <div class="callout-title">Caramelized Spekkoek Crust</div>
+                  <div class="callout-desc">Kerak panggangan emas harum mentega</div>
+                </div>
+              </div>
+
+              <div class="layer-callout callout-pos-mid-right" id="callout-lapis-2">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Lapisan 02 - 17</span>
+                  <div class="callout-title">18x Wijsman Butter Spiced Layers</div>
+                  <div class="callout-desc">Dipanggang sabar selapis demi selapis manual</div>
+                </div>
+              </div>
+
+              <div class="layer-callout callout-pos-mid-left" id="callout-lapis-3">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Rempah Autentik</span>
+                  <div class="callout-title">Kapulaga, Cengkeh & Ceylon Cinnamon</div>
+                  <div class="callout-desc">Infusi rempah hangat nusantara pilihan</div>
+                </div>
+              </div>
+
+              <div class="layer-callout callout-pos-bottom-right" id="callout-lapis-4">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Lapisan 18</span>
+                  <div class="callout-title">Moist Golden Butter Base</div>
+                  <div class="callout-desc">Dasar butter cake lumer gurih di setiap gigitan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             SCENE 2: TIRAMISU ORIGINAL SLICE 3D
+             ============================================== -->
+        <div class="scene-3d-view" id="scene-tiramisu" data-scene="1">
+          <!-- Floating Cocoa & Espresso Particles -->
+          <span class="floating-stage-item float-pos-1">☕</span>
+          <span class="floating-stage-item float-pos-2">🍫</span>
+          <span class="floating-stage-item float-pos-3">💧</span>
+          <span class="floating-stage-item float-pos-4">✨</span>
+          <span class="floating-stage-item float-pos-5">🤎</span>
+
+          <div class="cake-stack-3d" id="cake-tiramisu-3d">
+            <!-- Solid Base View -->
+            <div class="cake-solid-base" id="base-tiramisu">
+              <img src="assets/images/tiramisu.jpg" alt="Classic Tiramisu Original 3D">
+            </div>
+
+            <!-- Dynamic 3D Slices -->
+            <div class="slice-layers-wrapper" id="slices-tiramisu">
+              <div class="cake-slice-layer slice-tira-1" id="slice-tira-1"></div>
+              <div class="cake-slice-layer slice-tira-2" id="slice-tira-2"></div>
+              <div class="cake-slice-layer slice-tira-3" id="slice-tira-3"></div>
+            </div>
+
+            <!-- Exploding Callout Annotations -->
+            <div class="callout-annotations">
+              <div class="layer-callout callout-pos-top-left" id="callout-tira-1">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Top Layer</span>
+                  <div class="callout-title">Fine Belgian Cocoa Dusting</div>
+                  <div class="callout-desc">Bubuk kakao murni Belgia 100% tanpa pengawet</div>
+                </div>
+              </div>
+
+              <div class="layer-callout callout-pos-mid-right" id="callout-tira-2">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Middle Cloud</span>
+                  <div class="callout-title">Silky Mascarpone Cream</div>
+                  <div class="callout-desc">Keju mascarpone Italia lembut bertekstur awan</div>
+                </div>
+              </div>
+
+              <div class="layer-callout callout-pos-bottom-right" id="callout-tira-3">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Savoiardi Base</span>
+                  <div class="callout-title">Espresso-Drenched Ladyfingers</div>
+                  <div class="callout-desc">Direndam ekstrak espresso biji Arabika pilihan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             SCENE 3: TRIO MOCHI ORIGINAL 3D
+             ============================================== -->
+        <div class="scene-3d-view" id="scene-mochi" data-scene="2">
+          <!-- Floating Strawberries & Matcha dust -->
+          <span class="floating-stage-item float-pos-1">🍓</span>
+          <span class="floating-stage-item float-pos-2">🍵</span>
+          <span class="floating-stage-item float-pos-3">🌸</span>
+          <span class="floating-stage-item float-pos-4">✨</span>
+          <span class="floating-stage-item float-pos-5">🍡</span>
+
+          <div class="cake-stack-3d" id="cake-mochi-3d">
+            <!-- Solid Base View (Original 3 mochi cluster) -->
+            <div class="cake-solid-base" id="base-mochi">
+              <img src="assets/images/mochi.jpg" alt="Trio Mochi Original 3D">
+            </div>
+
+            <!-- Molten Center Burst Popout -->
+            <div class="mochi-center-burst" id="mochi-burst">
+              <span>🍓</span>
+              <span class="mochi-burst-label">Molten Heart</span>
+            </div>
+
+            <!-- Exploding Callout Annotations -->
+            <div class="callout-annotations">
+              <div class="layer-callout callout-pos-top-left" id="callout-mochi-1">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Soft Skin</span>
+                  <div class="callout-title">Chewy Mochiko Rice Flour</div>
+                  <div class="callout-desc">Adonan tepung beras Jepang kenyal lembut</div>
+                </div>
+              </div>
+
+              <div class="layer-callout callout-pos-mid-right" id="callout-mochi-2">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Lava Cream</span>
+                  <div class="callout-title">Molten Vanilla & Milk Lava</div>
+                  <div class="callout-desc">Isian krim meleleh lumer seketika di lidah</div>
+                </div>
+              </div>
+
+              <div class="layer-callout callout-pos-mid-left" id="callout-mochi-3">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Fresh Heart</span>
+                  <div class="callout-title">Sweet Strawberry Center</div>
+                  <div class="callout-desc">Inti buah strawberry manis asam segar</div>
+                </div>
+              </div>
+
+              <div class="layer-callout callout-pos-bottom-right" id="callout-mochi-4">
+                <span class="callout-dot"></span>
+                <div>
+                  <span class="callout-tag">Topping</span>
+                  <div class="callout-title">Kyoto Uji Matcha Dust</div>
+                  <div class="callout-desc">Bubuk matcha otentik aroma menenangkan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right HUD Vertical Scroll Tracker -->
+      <div class="scrolly-hud-tracker">
+        <div class="hud-step-pill" id="hud-step-text">01 / 03</div>
+        <div class="hud-rail">
+          <div class="hud-fill" id="hud-fill"></div>
+        </div>
+        <div class="hud-step-pill" id="hud-percent-text">0%</div>
+      </div>
+
+      <!-- Bottom Interactive Scroll Wheel Hint -->
+      <div class="scrolly-scroll-indicator">
+        <div class="scroll-wheel"></div>
+        <span>Scroll ke atas / bawah untuk membelah lapisan 3D</span>
+      </div>
+    </div>
+
+    <!-- Wave divider bottom into menu -->
+    <div class="wave-divider bottom">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,35 C320,85 680,10 1020,55 C1240,80 1360,40 1440,35 L1440,90 L0,90 Z" fill="var(--bg-secondary)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================
+       MENU SECTION (Bento Grid)
+       ============================ -->
+  <section class="menu-section section" id="menu">
+    <!-- Section number watermark -->
+    <span class="section-number">01</span>
+
+    <!-- Dot grid pattern -->
+    <div class="dot-pattern" style="top:0;left:0;width:100%;height:100%;"></div>
+
+    <!-- Animated blobs -->
+    <div class="blob plum" style="width:350px;height:350px;top:-10%;right:-10%;animation-delay:-5s;animation-duration:20s;"></div>
+    <div class="blob coral" style="width:280px;height:280px;bottom:-5%;left:-5%;animation-delay:-12s;animation-duration:17s;"></div>
+
+    <!-- Floating 3D objects -->
+    <span class="floating-object size-xl rotate-3d delay-1" style="top:5%;right:5%;" aria-hidden="true">🍰</span>
+    <span class="floating-object size-md bounce delay-2" style="top:15%;left:3%;" aria-hidden="true">🍓</span>
+    <span class="floating-object size-lg zigzag delay-3" style="bottom:8%;right:8%;" aria-hidden="true">🧁</span>
+    <span class="floating-object size-md rotate-3d delay-4" style="bottom:15%;left:5%;" aria-hidden="true">🍫</span>
+    <span class="floating-object size-sm swing delay-5" style="top:45%;right:2%;" aria-hidden="true">🫐</span>
+    <span class="floating-object size-sm bounce delay-1" style="top:60%;left:2%;" aria-hidden="true">🍒</span>
+
+    <!-- Geometric shapes -->
+    <div class="geo-shape geo-ring" style="top:8%;left:12%;opacity:0.05;animation-delay:-6s;"></div>
+    <div class="geo-shape geo-ring ring-gold" style="bottom:12%;right:15%;width:50px;height:50px;opacity:0.04;animation-delay:-9s;"></div>
+
+    <!-- Rising particles -->
+    <div class="particles-container">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <div class="container" style="position:relative;z-index:2;">
+      <!-- Section Header -->
+      <div class="menu-header reveal">
+        <div class="section-tag">
+          <span class="tag-line"></span>
+          Our Menu
+          <span class="tag-line"></span>
+        </div>
+        <h2><span class="animated-underline reveal">Curated Dessert Collection</span></h2>
+        <p>Setiap kreasi kami dibuat dengan bahan premium dan resep rahasia yang telah disempurnakan.</p>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="bento-grid">
+
+        <!-- Card 1: Tiramisu (Large) -->
+        <div class="bento-card reveal-left stagger-1" id="card-tiramisu">
+          <div class="bento-card-img">
+            <span class="card-badge best-seller">⭐ Best Seller</span>
+            <img src="assets/images/tiramisu.jpg" alt="Tiramisu klasik dengan lapisan mascarpone cream dan cocoa powder" loading="lazy">
+          </div>
+          <div class="bento-card-content">
+            <h3>Classic Tiramisu</h3>
+            <p class="card-desc">Ladyfinger lembut direndam espresso pilihan, dilapis mascarpone cream homemade dan taburan cocoa Belgium.</p>
+            <div class="bento-card-footer">
+              <div class="card-price"><span class="price-from">dari</span>Rp 85.000</div>
+              <a href="#order" class="card-order-btn">Pesan <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Cheesecake (Medium) -->
+        <div class="bento-card reveal-right stagger-2" id="card-cheesecake">
+          <div class="bento-card-img">
+            <span class="card-badge popular">🔥 Popular</span>
+            <img src="assets/images/cheesecake.jpg" alt="New York cheesecake dengan strawberry sauce" loading="lazy">
+          </div>
+          <div class="bento-card-content">
+            <h3>NY Cheesecake</h3>
+            <p class="card-desc">Creamy cheesecake gaya New York dengan crust graham cracker dan strawberry sauce homemade.</p>
+            <div class="bento-card-footer">
+              <div class="card-price"><span class="price-from">dari</span>Rp 95.000</div>
+              <a href="#order" class="card-order-btn">Pesan <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Fruit Tart (Medium) -->
+        <div class="bento-card reveal-left stagger-3" id="card-fruit-tart">
+          <div class="bento-card-img">
+            <img src="assets/images/fruit-tart.jpg" alt="Fruit tart segar dengan buah-buahan premium" loading="lazy">
+          </div>
+          <div class="bento-card-content">
+            <h3>Fresh Fruit Tart</h3>
+            <p class="card-desc">Tart renyah berisi pastry cream vanila, dihias dengan buah segar pilihan dan glaze madu.</p>
+            <div class="bento-card-footer">
+              <div class="card-price"><span class="price-from">dari</span>Rp 78.000</div>
+              <a href="#order" class="card-order-btn">Pesan <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Lapis Legit (Large) -->
+        <div class="bento-card reveal-right stagger-4" id="card-lapis-legit">
+          <div class="bento-card-img">
+            <span class="card-badge new">✨ New</span>
+            <img src="assets/images/lapis-legit.jpg" alt="Lapis legit premium dengan lapisan spekkoek traditional" loading="lazy">
+          </div>
+          <div class="bento-card-content">
+            <h3>Lapis Legit Premium</h3>
+            <p class="card-desc">Resep warisan keluarga turun-temurun. 18+ lapisan butter cake spekkoek dengan rempah pilihan — cengkeh, kayu manis, dan pala.</p>
+            <div class="bento-card-footer">
+              <div class="card-price"><span class="price-from">dari</span>Rp 180.000</div>
+              <a href="#order" class="card-order-btn">Pesan <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Brownies (Medium) -->
+        <div class="bento-card reveal-left stagger-5" id="card-brownies">
+          <div class="bento-card-img">
+            <img src="assets/images/brownies.jpg" alt="Fudgy chocolate brownies premium" loading="lazy">
+          </div>
+          <div class="bento-card-content">
+            <h3>Fudgy Brownies</h3>
+            <p class="card-desc">Dark chocolate brownies yang super fudgy dengan Belgian chocolate chunks di setiap potongan.</p>
+            <div class="bento-card-footer">
+              <div class="card-price"><span class="price-from">dari</span>Rp 65.000</div>
+              <a href="#order" class="card-order-btn">Pesan <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Mochi (Medium) -->
+        <div class="bento-card reveal-right stagger-6" id="card-mochi">
+          <div class="bento-card-img">
+            <span class="card-badge new">✨ New</span>
+            <img src="assets/images/mochi.jpg" alt="Mochi cake tiga rasa" loading="lazy">
+          </div>
+          <div class="bento-card-content">
+            <h3>Trio Mochi Cake</h3>
+            <p class="card-desc">Tiga mochi lembut — strawberry, matcha Uji, dan vanilla Bourbon. Chewy di luar, creamy di dalam.</p>
+            <div class="bento-card-footer">
+              <div class="card-price"><span class="price-from">dari</span>Rp 55.000</div>
+              <a href="#order" class="card-order-btn">Pesan <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Wave divider bottom -->
+    <div class="wave-divider bottom">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C240,20 480,90 720,40 C960,0 1200,70 1440,30 L1440,100 L0,100 Z" fill="var(--cream)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================
+       TESTIMONIAL SECTION
+       ============================ -->
+  <section class="testimonial-section section" id="testimonials">
+    <!-- Section number watermark -->
+    <span class="section-number">02</span>
+
+    <!-- Animated blobs -->
+    <div class="blob frosting" style="width:400px;height:400px;top:-15%;left:60%;animation-delay:-3s;animation-duration:19s;"></div>
+    <div class="blob mint" style="width:250px;height:250px;bottom:5%;right:-5%;animation-delay:-8s;animation-duration:21s;opacity:0.05;"></div>
+
+    <!-- Floating 3D objects -->
+    <span class="floating-object size-xl rotate-3d delay-2" style="top:8%;right:6%;" aria-hidden="true">🍩</span>
+    <span class="floating-object size-lg bounce delay-1" style="top:20%;left:4%;" aria-hidden="true">🎂</span>
+    <span class="floating-object size-md zigzag delay-3" style="bottom:12%;left:8%;" aria-hidden="true">🍰</span>
+    <span class="floating-object size-md rotate-3d delay-5" style="bottom:20%;right:5%;" aria-hidden="true">🧁</span>
+    <span class="floating-object size-sm swing delay-4" style="top:50%;right:3%;" aria-hidden="true">🍒</span>
+    <span class="floating-object size-sm bounce delay-2" style="top:40%;left:2%;" aria-hidden="true">🍫</span>
+    <span class="floating-object size-lg spin-slow delay-3" style="bottom:5%;left:45%;" aria-hidden="true">🍪</span>
+
+    <!-- Geometric shapes -->
+    <div class="geo-shape geo-ring ring-plum" style="top:15%;left:15%;opacity:0.05;animation-delay:-3s;"></div>
+    <div class="geo-shape geo-ring ring-gold" style="bottom:18%;right:12%;width:70px;height:70px;opacity:0.04;animation-delay:-10s;"></div>
+    <div class="geo-shape geo-ring" style="top:55%;left:6%;width:35px;height:35px;opacity:0.03;animation-delay:-15s;"></div>
+
+    <!-- Decorative sprinkles -->
+    <div class="sprinkle sprinkle-1"></div>
+    <div class="sprinkle sprinkle-2"></div>
+    <div class="sprinkle sprinkle-3"></div>
+    <div class="sprinkle sprinkle-4"></div>
+    <div class="sprinkle sprinkle-5"></div>
+
+    <!-- Rising particles -->
+    <div class="particles-container">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="testimonial-header reveal">
+        <div class="section-tag">
+          <span class="tag-line"></span>
+          Testimonials
+          <span class="tag-line"></span>
+        </div>
+        <h2><span class="animated-underline reveal">Apa Kata Mereka?</span></h2>
+        <p>Lebih dari 500+ pelanggan sudah merasakan kelezatan Lapis Luxe. Ini kata mereka.</p>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="testimonial-carousel">
+      <div class="testimonial-track">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Tiramisunya GILA enak!! Beneran kerasa espresso-nya, mascarpone-nya super creamy. Ga kayak tiramisu biasa yang suka kemanisan. Ini beneran the real deal! 🔥</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-1">👩‍💼</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Sarah Wijaya</div>
+              <div class="author-detail">Pelanggan tetap sejak 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Pesan cheesecake buat ulang tahun istri. Dia sampai nangis karena terharu sama rasanya 😂 Packaging-nya juga premium banget, cocok buat gift!</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-2">👨‍💻</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Reza Pratama</div>
+              <div class="author-detail">Jakarta Selatan</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Lapis legit-nya reminds me of my grandma's recipe, tapi versi elevated. Layer-nya banyak banget dan bumbunya pas! Wajib coba yang ini.</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-3">👩‍🎨</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Anita Kusuma</div>
+              <div class="author-detail">Food Blogger</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Brownies-nya tuh the best sih! Fudgy level-nya perfect, ga terlalu dry ga terlalu basah. Dark chocolate-nya berasa banget. Langsung repeat order 3x! 🍫</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-4">🧑‍🍳</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Kevin Santoso</div>
+              <div class="author-detail">Repeat customer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Mochi cake-nya lucu banget dan enak! Matcha-nya pake Uji beneran, kerasa beda sama yang lain. Anak-anak gue juga suka yang strawberry! Best dessert for fam! 💚</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-5">👩‍👧</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Maya Putri</div>
+              <div class="author-detail">Mom of 2</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DUPLICATED for infinite scroll -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Tiramisunya GILA enak!! Beneran kerasa espresso-nya, mascarpone-nya super creamy. Ga kayak tiramisu biasa yang suka kemanisan. Ini beneran the real deal! 🔥</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-1">👩‍💼</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Sarah Wijaya</div>
+              <div class="author-detail">Pelanggan tetap sejak 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Pesan cheesecake buat ulang tahun istri. Dia sampai nangis karena terharu sama rasanya 😂 Packaging-nya juga premium banget, cocok buat gift!</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-2">👨‍💻</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Reza Pratama</div>
+              <div class="author-detail">Jakarta Selatan</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Lapis legit-nya reminds me of my grandma's recipe, tapi versi elevated. Layer-nya banyak banget dan bumbunya pas! Wajib coba yang ini.</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-3">👩‍🎨</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Anita Kusuma</div>
+              <div class="author-detail">Food Blogger</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Brownies-nya tuh the best sih! Fudgy level-nya perfect, ga terlalu dry ga terlalu basah. Dark chocolate-nya berasa banget. Langsung repeat order 3x! 🍫</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-4">🧑‍🍳</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Kevin Santoso</div>
+              <div class="author-detail">Repeat customer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>Mochi cake-nya lucu banget dan enak! Matcha-nya pake Uji beneran, kerasa beda sama yang lain. Anak-anak gue juga suka yang strawberry! Best dessert for fam! 💚</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar av-5">👩‍👧</div>
+            <div class="testimonial-author-info">
+              <div class="author-name">Maya Putri</div>
+              <div class="author-detail">Mom of 2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave divider bottom -->
+    <div class="wave-divider bottom">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C180,80 360,10 540,50 C720,90 900,20 1080,60 C1260,100 1380,40 1440,50 L1440,100 L0,100 Z" fill="var(--dark-choco)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================
+       ORDER SECTION
+       ============================ -->
+  <section class="order-section section" id="order">
+    <!-- Section number watermark -->
+    <span class="section-number">03</span>
+
+    <!-- Floating 3D objects (lighter for dark bg) -->
+    <span class="floating-object size-xl rotate-3d delay-1" style="top:8%;right:8%;opacity:0.15;" aria-hidden="true">🍰</span>
+    <span class="floating-object size-lg bounce delay-3" style="bottom:10%;left:5%;opacity:0.12;" aria-hidden="true">🧁</span>
+    <span class="floating-object size-md zigzag delay-2" style="top:50%;left:3%;opacity:0.10;" aria-hidden="true">🍩</span>
+    <span class="floating-object size-md rotate-3d delay-4" style="bottom:25%;right:3%;opacity:0.10;" aria-hidden="true">🎂</span>
+    <span class="floating-object size-sm swing delay-5" style="top:20%;left:12%;opacity:0.08;" aria-hidden="true">🍓</span>
+    <span class="floating-object size-lg spin-slow delay-1" style="top:70%;right:12%;opacity:0.08;" aria-hidden="true">🍪</span>
+
+    <!-- Geometric shapes -->
+    <div class="geo-shape geo-ring" style="top:15%;left:8%;opacity:0.04;width:100px;height:100px;border-color:rgba(255,255,255,0.15);animation-delay:-5s;"></div>
+    <div class="geo-shape geo-ring" style="bottom:20%;right:10%;opacity:0.03;width:70px;height:70px;border-color:rgba(255,255,255,0.1);animation-delay:-11s;"></div>
+
+    <!-- Rising particles -->
+    <div class="particles-container">
+      <div class="particle" style="background:rgba(255,255,255,0.3);"></div>
+      <div class="particle" style="background:rgba(255,107,107,0.4);"></div>
+      <div class="particle" style="background:rgba(255,255,255,0.2);"></div>
+      <div class="particle" style="background:rgba(139,92,246,0.3);"></div>
+      <div class="particle" style="background:rgba(255,255,255,0.25);"></div>
+      <div class="particle" style="background:rgba(245,158,11,0.3);"></div>
+      <div class="particle" style="background:rgba(255,255,255,0.2);"></div>
+      <div class="particle" style="background:rgba(110,231,183,0.3);"></div>
+    </div>
+
+    <div class="container" style="position:relative;z-index:2;">
+      <!-- Left: Info -->
+      <div class="order-info reveal">
+        <div class="section-tag">
+          <span class="tag-line"></span>
+          Order Now
+          <span class="tag-line"></span>
+        </div>
+        <h2><span class="animated-underline reveal">Pesan Dessert Favoritmu</span></h2>
+        <p>Isi form di samping dan kami akan menghubungi kamu via WhatsApp untuk konfirmasi pesanan dan pengiriman.</p>
+
+        <div class="order-features">
+          <div class="order-feature">
+            <div class="feature-icon">🚀</div>
+            <span class="feature-text">Pengiriman same-day untuk area Jakarta</span>
+          </div>
+          <div class="order-feature">
+            <div class="feature-icon">🎁</div>
+            <span class="feature-text">Gift packaging gratis untuk setiap pesanan</span>
+          </div>
+          <div class="order-feature">
+            <div class="feature-icon">🌿</div>
+            <span class="feature-text">Bahan premium & berkualitas tinggi</span>
+          </div>
+          <div class="order-feature">
+            <div class="feature-icon">💳</div>
+            <span class="feature-text">Pembayaran mudah — transfer / QRIS / COD</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="order-form-wrapper reveal-right">
+        <form class="order-form" id="order-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="order-name">Nama Lengkap</label>
+              <input type="text" id="order-name" placeholder="Nama kamu" required>
+            </div>
+            <div class="form-group">
+              <label for="order-phone">No. WhatsApp</label>
+              <input type="tel" id="order-phone" placeholder="08xxxxxxxxxx" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="order-product">Pilih Produk</label>
+              <select id="order-product" required>
+                <option value="" disabled selected>— Pilih dessert —</option>
+                <option value="tiramisu">Classic Tiramisu — Rp 85.000</option>
+                <option value="cheesecake">NY Cheesecake — Rp 95.000</option>
+                <option value="fruit-tart">Fresh Fruit Tart — Rp 78.000</option>
+                <option value="lapis-legit">Lapis Legit Premium — Rp 180.000</option>
+                <option value="brownies">Fudgy Brownies — Rp 65.000</option>
+                <option value="mochi">Trio Mochi Cake — Rp 55.000</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="order-qty">Jumlah</label>
+              <select id="order-qty" required>
+                <option value="" disabled selected>— Jumlah —</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6+">6+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="order-notes">Catatan (opsional)</label>
+            <textarea id="order-notes" placeholder="Contoh: untuk ulang tahun, tolong tambah lilin, dll."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" id="btn-submit">
+            <span class="ripple-container"></span>
+            Kirim Pesanan 🍰
+          </button>
+        </form>
+
+        <!-- Success State -->
+        <div class="order-success" id="order-success">
+          <div class="success-icon">✅</div>
+          <h3 class="success-title">Pesanan Terkirim!</h3>
+          <p class="success-desc">Terima kasih! Kami akan menghubungi kamu via WhatsApp dalam 15 menit untuk konfirmasi pesanan. 🎉</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span>🍰</span>
+            <span>Lapis<span class="logo-accent">Luxe</span></span>
+          </div>
+          <p>Premium artisan desserts yang dibuat dengan cinta dan bahan terbaik. Every layer tells a story — dan cerita itu dimulai dari dapur kami untuk meja makan kamu.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="TikTok">🎵</a>
+            <a href="#" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#card-tiramisu">Tiramisu</a></li>
+            <li><a href="#card-cheesecake">Cheesecake</a></li>
+            <li><a href="#card-fruit-tart">Fruit Tart</a></li>
+            <li><a href="#card-lapis-legit">Lapis Legit</a></li>
+            <li><a href="#card-brownies">Brownies</a></li>
+            <li><a href="#card-mochi">Mochi Cake</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#order">Order</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Lapis Luxe. All rights reserved.</span>
+        <span class="made-with">Made with 🍰 & ❤️ in Jakarta</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

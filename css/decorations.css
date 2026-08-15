@@ -1,0 +1,409 @@
+/* ================================================
+   LAPIS LUXE — Enhanced Backgrounds & Decorations
+   Animated gradients, floating 3D objects, waves
+   ================================================ */
+
+/* ======= GLOBAL ANIMATED BACKGROUND LAYER ======= */
+
+/* Animated gradient mesh that flows across sections */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 50% 0%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blob-morph {
+  0%, 100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(20px, -30px) rotate(90deg);
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(-20px, 20px) rotate(180deg);
+  }
+  75% {
+    border-radius: 50% 40% 50% 60% / 35% 55% 45% 65%;
+    transform: translate(15px, 10px) rotate(270deg);
+  }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-radius, 40px)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-radius, 40px)) rotate(-360deg); }
+}
+
+@keyframes rotate3d-x {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to   { transform: rotateX(360deg) rotateY(180deg); }
+}
+
+@keyframes rotate3d-y {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+@keyframes rotate3d-wobble {
+  0%   { transform: perspective(400px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  25%  { transform: perspective(400px) rotateX(10deg) rotateY(90deg) rotateZ(5deg); }
+  50%  { transform: perspective(400px) rotateX(-5deg) rotateY(180deg) rotateZ(-3deg); }
+  75%  { transform: perspective(400px) rotateX(8deg) rotateY(270deg) rotateZ(4deg); }
+  100% { transform: perspective(400px) rotateX(0deg) rotateY(360deg) rotateZ(0deg); }
+}
+
+@keyframes bounce-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-20px) scale(1.05); }
+  50% { transform: translateY(-12px) scale(0.98); }
+  70% { transform: translateY(-18px) scale(1.02); }
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+
+@keyframes zigzag-float {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(15px, -20px) rotate(10deg); }
+  50%  { transform: translate(-10px, -35px) rotate(-5deg); }
+  75%  { transform: translate(20px, -15px) rotate(8deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes pulse-scale {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+@keyframes dash-spin {
+  to { stroke-dashoffset: -100; }
+}
+
+/* ======= FLOATING 3D OBJECT SYSTEM ======= */
+.floating-object {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+  font-size: 2rem;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));
+}
+
+.floating-object.size-sm { font-size: 1.2rem; }
+.floating-object.size-md { font-size: 2rem; }
+.floating-object.size-lg { font-size: 3rem; }
+.floating-object.size-xl { font-size: 4rem; }
+
+.floating-object.rotate-3d {
+  animation: rotate3d-wobble 12s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.floating-object.bounce {
+  animation: bounce-float 4s ease-in-out infinite;
+}
+
+.floating-object.swing {
+  animation: swing 3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.floating-object.zigzag {
+  animation: zigzag-float 8s ease-in-out infinite;
+}
+
+.floating-object.orbit {
+  animation: orbit 15s linear infinite;
+}
+
+.floating-object.spin-slow {
+  animation: rotate3d-y 20s linear infinite;
+}
+
+/* Delay variants */
+.floating-object.delay-1 { animation-delay: -2s; }
+.floating-object.delay-2 { animation-delay: -4s; }
+.floating-object.delay-3 { animation-delay: -6s; }
+.floating-object.delay-4 { animation-delay: -8s; }
+.floating-object.delay-5 { animation-delay: -10s; }
+
+/* ======= ANIMATED BLOB SHAPES ======= */
+.blob {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: blob-morph 15s ease-in-out infinite;
+  opacity: 0.07;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+.blob.coral { background: var(--coral); }
+.blob.plum { background: var(--plum); }
+.blob.gold { background: var(--gold); }
+.blob.mint { background: var(--mint); }
+.blob.frosting { background: var(--frosting-deep); }
+
+/* ======= HERO BACKGROUND UPGRADE ======= */
+.hero {
+  background: var(--cream);
+}
+
+.hero::before {
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 85%, rgba(254, 205, 211, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 15%, rgba(167, 139, 250, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
+    var(--cream) !important;
+  animation: gradient-shift 20s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+/* Grain overlay */
+.hero::after {
+  opacity: 0.04 !important;
+}
+
+/* ======= WAVE DIVIDERS ======= */
+.wave-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.wave-divider.top {
+  top: -1px;
+}
+
+.wave-divider.bottom {
+  bottom: -1px;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.wave-divider.flip svg {
+  transform: scaleY(-1);
+}
+
+/* ======= MENU SECTION BACKGROUND UPGRADE ======= */
+.menu-section {
+  background:
+    radial-gradient(ellipse 40% 30% at 10% 20%, rgba(139, 92, 246, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(255, 107, 107, 0.04) 0%, transparent 70%),
+    var(--bg-secondary) !important;
+  overflow: visible !important;
+}
+
+.menu-section::before {
+  display: none !important;
+}
+
+/* ======= TESTIMONIAL SECTION BACKGROUND UPGRADE ======= */
+.testimonial-section {
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(254, 205, 211, 0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 70%),
+    var(--cream) !important;
+}
+
+/* ======= ORDER SECTION BACKGROUND UPGRADE ======= */
+.order-section {
+  background:
+    radial-gradient(ellipse 50% 50% at 80% 20%, rgba(255, 107, 107, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(245, 158, 11, 0.05) 0%, transparent 60%),
+    linear-gradient(135deg, var(--dark-choco) 0%, #3D2519 50%, #4A2C1A 100%) !important;
+}
+
+/* ======= GEOMETRIC DECORATIONS ======= */
+.geo-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.08;
+}
+
+.geo-ring {
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--coral);
+  border-radius: 50%;
+  animation: rotate3d-wobble 18s linear infinite, pulse-scale 6s ease-in-out infinite;
+}
+
+.geo-ring.ring-plum { border-color: var(--plum); }
+.geo-ring.ring-gold { border-color: var(--gold); }
+
+.geo-diamond {
+  width: 30px;
+  height: 30px;
+  background: var(--coral);
+  transform: rotate(45deg);
+  animation: float-slow 6s ease-in-out infinite, spin-slow 20s linear infinite;
+}
+
+.geo-cross {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.geo-cross::before,
+.geo-cross::after {
+  content: '';
+  position: absolute;
+  background: var(--plum);
+  border-radius: 2px;
+}
+
+.geo-cross::before {
+  width: 100%;
+  height: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.geo-cross::after {
+  width: 3px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ======= DOTTED GRID PATTERN ======= */
+.dot-pattern {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image: radial-gradient(circle, var(--dark-choco) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ======= SECTION NUMBER BADGE ======= */
+.section-number {
+  position: absolute;
+  top: var(--space-3xl);
+  right: var(--space-2xl);
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 800;
+  opacity: 0.03;
+  color: var(--dark-choco);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dark section variant */
+.order-section .section-number {
+  color: white;
+  opacity: 0.04;
+}
+
+/* ======= ANIMATED UNDERLINE FOR SECTION TITLES ======= */
+.animated-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--coral), var(--plum), var(--gold));
+  background-size: 200% 100%;
+  border-radius: 100px;
+  animation: gradient-shift 4s ease-in-out infinite;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s var(--ease-out-expo);
+}
+
+.animated-underline.revealed::after {
+  transform: scaleX(1);
+}
+
+/* ======= FLOATING PARTICLES CANVAS-LIKE ======= */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-rise 8s ease-in-out infinite;
+}
+
+@keyframes particle-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) scale(0);
+  }
+  10% {
+    opacity: 0.6;
+    transform: translateY(80%) scale(1);
+  }
+  90% {
+    opacity: 0.3;
+    transform: translateY(-20%) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40%) scale(0);
+  }
+}
+
+.particle:nth-child(1) { left: 10%; background: var(--coral); animation-delay: 0s; animation-duration: 7s; }
+.particle:nth-child(2) { left: 20%; background: var(--plum); animation-delay: -1s; animation-duration: 9s; }
+.particle:nth-child(3) { left: 35%; background: var(--gold); animation-delay: -2s; animation-duration: 6s; }
+.particle:nth-child(4) { left: 50%; background: var(--mint); animation-delay: -3s; animation-duration: 8s; }
+.particle:nth-child(5) { left: 65%; background: var(--frosting-deep); animation-delay: -4s; animation-duration: 10s; }
+.particle:nth-child(6) { left: 78%; background: var(--coral); animation-delay: -5s; animation-duration: 7.5s; }
+.particle:nth-child(7) { left: 90%; background: var(--plum); animation-delay: -6s; animation-duration: 8.5s; }
+.particle:nth-child(8) { left: 5%; background: var(--gold); animation-delay: -2.5s; animation-duration: 9.5s; }
+.particle:nth-child(9) { left: 45%; background: var(--coral); animation-delay: -4.5s; animation-duration: 6.5s; }
+.particle:nth-child(10) { left: 85%; background: var(--mint); animation-delay: -1.5s; animation-duration: 11s; }
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .floating-object.size-xl { font-size: 2.5rem; }
+  .floating-object.size-lg { font-size: 2rem; }
+  .section-number { font-size: 5rem; }
+  .blob { filter: blur(30px); }
+  .geo-ring { width: 50px; height: 50px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-object,
+  .blob,
+  .geo-shape,
+  .particle {
+    animation: none !important;
+  }
+}

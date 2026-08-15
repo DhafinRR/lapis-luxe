@@ -1,0 +1,512 @@
+/* ================================================
+   LAPIS LUXE — True 3D Layer Deconstruction Engine
+   Uses exact original dessert assets with slice deconstruction
+   ================================================ */
+
+.scrolly-journey {
+  position: relative;
+  height: 420vh; /* Smooth scrollytelling runway */
+  background: var(--cream);
+}
+
+.scrolly-sticky-frame {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px var(--space-xl) var(--space-xl);
+  overflow: hidden;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* Dynamic ambient gradient that shifts gently */
+.scrolly-bg-ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 50% 50%, rgba(254, 205, 211, 0.4) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 45% at 80% 25%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
+    var(--cream);
+  transition: background 0.6s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header Section (Proper Spacing & Typography) */
+.scrolly-header {
+  position: relative;
+  text-align: center;
+  z-index: 15;
+  pointer-events: none;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 10px;
+}
+
+.scrolly-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 107, 107, 0.25);
+  padding: 6px 16px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--coral);
+  box-shadow: 0 4px 14px rgba(255, 107, 107, 0.1);
+  margin-bottom: 8px;
+  pointer-events: auto;
+}
+
+.scrolly-badge .pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--coral);
+  animation: pulse-scale 1.8s infinite;
+}
+
+.scrolly-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  color: var(--dark-choco);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.scrolly-subtitle {
+  font-size: clamp(0.85rem, 1.1vw, 0.98rem);
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Phase Tabs */
+.scrolly-phase-tabs {
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 5px 8px;
+  border-radius: var(--border-radius-pill);
+  border: 1px solid rgba(45, 27, 20, 0.08);
+  box-shadow: 0 4px 16px rgba(45, 27, 20, 0.06);
+  margin-top: 12px;
+  pointer-events: auto;
+}
+
+.phase-tab {
+  padding: 7px 16px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-secondary);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-spring);
+  white-space: nowrap;
+}
+
+.phase-tab:hover {
+  color: var(--coral);
+}
+
+.phase-tab.active {
+  background: var(--dark-choco);
+  color: white;
+  box-shadow: 0 4px 12px rgba(45, 27, 20, 0.18);
+}
+
+/* ==============================================
+   CENTER 3D STAGE & SLICE ENGINE
+   ============================================== */
+.scrolly-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 440px;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  margin: auto 0;
+}
+
+/* Scene Views */
+.scene-3d-view {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.85) rotateX(10deg);
+  transition: opacity 0.5s ease, transform 0.5s var(--ease-out-expo);
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.scene-3d-view.active-scene {
+  opacity: 1;
+  transform: scale(1) rotateX(0deg);
+  pointer-events: auto;
+}
+
+/* 3D Multi-Layer Cake Container */
+.cake-stack-3d {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: grab;
+}
+
+.cake-stack-3d:active {
+  cursor: grabbing;
+}
+
+/* Base Single Solid View (at rest) */
+.cake-solid-base {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(45, 27, 20, 0.16);
+  background: white;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+  z-index: 2;
+}
+
+.cake-solid-base img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Multi-Slice 3D Deconstruction Layers */
+.slice-layers-wrapper {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Slices for Lapis Legit & Tiramisu */
+.cake-slice-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transform-style: preserve-3d;
+  box-shadow: 0 8px 24px rgba(45, 27, 20, 0.12);
+  will-change: transform, box-shadow;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Lapis Legit 4 Horizontal Slices */
+.slice-lapis-1 {
+  clip-path: inset(0 0 75% 0 round var(--border-radius-xl) var(--border-radius-xl) 0 0);
+  background-image: url('../assets/images/lapis-legit.jpg');
+}
+.slice-lapis-2 {
+  clip-path: inset(25% 0 50% 0);
+  background-image: url('../assets/images/lapis-legit.jpg');
+}
+.slice-lapis-3 {
+  clip-path: inset(50% 0 25% 0);
+  background-image: url('../assets/images/lapis-legit.jpg');
+}
+.slice-lapis-4 {
+  clip-path: inset(75% 0 0 0 round 0 0 var(--border-radius-xl) var(--border-radius-xl));
+  background-image: url('../assets/images/lapis-legit.jpg');
+}
+
+/* Tiramisu 3 Horizontal Slices */
+.slice-tira-1 {
+  clip-path: inset(0 0 66% 0 round var(--border-radius-xl) var(--border-radius-xl) 0 0);
+  background-image: url('../assets/images/tiramisu.jpg');
+}
+.slice-tira-2 {
+  clip-path: inset(33% 0 33% 0);
+  background-image: url('../assets/images/tiramisu.jpg');
+}
+.slice-tira-3 {
+  clip-path: inset(66% 0 0 0 round 0 0 var(--border-radius-xl) var(--border-radius-xl));
+  background-image: url('../assets/images/tiramisu.jpg');
+}
+
+/* Mochi Deconstruction Elements */
+.mochi-center-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 20%, rgba(254, 205, 211, 0.9) 60%, rgba(255, 107, 107, 0.4) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  box-shadow: 0 0 40px rgba(255, 107, 107, 0.4);
+  z-index: 5;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.mochi-burst-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--dark-choco);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: white;
+  padding: 2px 8px;
+  border-radius: 100px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 4px;
+}
+
+/* Callout Annotations */
+.callout-annotations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.layer-callout {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 28px rgba(45, 27, 20, 0.12);
+  opacity: 0;
+  transform: translateY(16px) scale(0.85);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  z-index: 20;
+}
+
+.layer-callout.show-callout {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.callout-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--coral);
+  color: white;
+}
+
+.callout-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dark-choco);
+}
+
+.callout-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+/* Precise Callout Offsets */
+.callout-pos-top-left    { top: 5%;  left: -45px; }
+.callout-pos-mid-right   { top: 38%; right: -55px; }
+.callout-pos-mid-left    { top: 62%; left: -50px; }
+.callout-pos-bottom-right { bottom: 5%; right: -40px; }
+
+.callout-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.25);
+  flex-shrink: 0;
+}
+
+/* Floating Stage Ingredient Emojis */
+.floating-stage-item {
+  position: absolute;
+  font-size: 2rem;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+  will-change: transform, opacity;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.float-pos-1 { top: 6%; left: 6%; }
+.float-pos-2 { top: 12%; right: 8%; }
+.float-pos-3 { bottom: 10%; left: 10%; }
+.float-pos-4 { bottom: 14%; right: 6%; }
+.float-pos-5 { top: 48%; left: 2%; }
+
+/* Stage Ambient Glow & Shadow */
+.stage-pedestal-shadow {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 38px;
+  background: radial-gradient(ellipse, rgba(45, 27, 20, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Vertical HUD Progress Tracker */
+.scrolly-hud-tracker {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  z-index: 20;
+}
+
+.hud-rail {
+  width: 4px;
+  height: 140px;
+  background: rgba(45, 27, 20, 0.1);
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hud-fill {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--coral), var(--plum));
+  border-radius: 100px;
+  transition: height 0.1s linear;
+}
+
+.hud-step-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 10px;
+  border-radius: var(--border-radius-pill);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Bottom Hint */
+.scrolly-scroll-indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 6px 16px;
+  border-radius: var(--border-radius-pill);
+  border: 1px solid rgba(45, 27, 20, 0.08);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  z-index: 15;
+  margin-bottom: 10px;
+  animation: bounce-float 2.2s infinite ease-in-out;
+}
+
+.scrolly-scroll-indicator .scroll-wheel {
+  width: 16px;
+  height: 22px;
+  border: 2px solid var(--coral);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scrolly-scroll-indicator .scroll-wheel::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 5px;
+  background: var(--coral);
+  border-radius: 2px;
+  animation: scroll-wheel-dot 1.5s infinite;
+}
+
+@keyframes scroll-wheel-dot {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 8px); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .scrolly-sticky-frame {
+    padding: 70px var(--space-md) var(--space-md);
+  }
+  .scrolly-stage {
+    height: 380px;
+  }
+  .cake-stack-3d {
+    width: 270px;
+    height: 270px;
+  }
+  .callout-title {
+    font-size: 0.78rem;
+  }
+  .callout-desc {
+    display: none;
+  }
+  .scrolly-hud-tracker {
+    display: none;
+  }
+  .callout-pos-top-left    { left: -10px; top: 0%; }
+  .callout-pos-mid-right   { right: -10px; top: 32%; }
+  .callout-pos-mid-left    { left: -10px; top: 62%; }
+  .callout-pos-bottom-right { right: -10px; bottom: 0%; }
+}
+
+@media (max-width: 480px) {
+  .scrolly-stage {
+    height: 320px;
+  }
+  .cake-stack-3d {
+    width: 220px;
+    height: 220px;
+  }
+  .phase-tab {
+    padding: 5px 10px;
+    font-size: 0.68rem;
+  }
+  .layer-callout {
+    padding: 6px 10px;
+  }
+}
